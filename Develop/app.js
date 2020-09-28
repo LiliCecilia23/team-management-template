@@ -13,6 +13,80 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+inquirer
+.prompt([
+    {
+        type: "input",
+        message: "Hi! Welcome to TeamBuilder, what is your name?",
+        name: "name",
+    },
+    {
+        type: "input",
+        message: "What is your employee ID?",
+        name: "id",
+    },
+    {
+        type: "input",
+        message: "What is your employee email?",
+        name: "email",
+    },
+    {
+        message: "What is your role?",
+        name: "role",
+        type: "list",
+        choices: ['Manager', 'Engineer', 'Intern'],
+    },
+]).then(response => {
+    const {name, id, email, role} = response;
+    if (role === 'Manager'){
+        managerInfo(this.name, this.id, this.email);
+    } else if (role === 'Engineer'){
+        engineerInfo(this.name, this.id, this.email);
+    } else if (role === 'Intern'){
+        internInfo(this.name, this.id, this.email);
+    };
+});
+
+function managerInfo(name, id, email){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "officeNum",
+            message: "What is your office Number?",
+        }
+    ]).then(response => {
+        const {officeNum} = response;
+
+        let manager = new Manager(response.name, response.id, response.email, response.officeNum);
+    });
+};
+function engineerInfo(name, id, email){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "github",
+            message: "What is your GitHub username?",
+        }
+    ]).then(response => {
+        const {github} = response;
+
+        let engineer = new Engineer(response.name, response.id, response.email, response.github);
+    });
+};
+function internInfo(name, id, email){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "school",
+            message: "What is the name of your school?",
+        }
+    ]).then(response => {
+        const {school} = response;
+
+        let intern = new Intern(response.name, response.id, response.email, response.school);
+    });
+};
+
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
