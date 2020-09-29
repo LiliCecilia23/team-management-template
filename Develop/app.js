@@ -46,7 +46,7 @@ function employeeInfo () {
             });
         } else {
             let completeTeam = render(team);
-            fs.writeFile("team.html", completeTeam, "utf8", function(err){
+            fs.writeFile(outputPath, completeTeam, "utf8", function(err){
                 if (err) {
                     return console.log(err);
                 } else {
