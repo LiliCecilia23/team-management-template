@@ -1,0 +1,21 @@
+.jumbotron {
+    background-color: #F2994B;
+    color: #F2E9E4;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 100px;
+}
+
+.card {
+    background-color: #F2E9E4;
+    border: solid 3px #D96704;
+    font-family: 'Raleway', sans-serif;
+    color: #D96704;
+}
+
+a {
+    color: #c45689;
+}
+
+body {
+    background-color: #F2B66D;
+}
