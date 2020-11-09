@@ -19,4 +19,4 @@ a generated HTML template populated with your information.
 * BootStrap
 
 ## License
-Copywrite 2020 Lili Clift Licensed under the MIT License.
+Copyright 2020 Lili Clift Licensed under the MIT License.
